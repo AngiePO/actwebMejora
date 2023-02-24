@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Angela Sofía Pontón Ochoa - A01284845-->
+<!-- durante el código, marque como comentario los requisitos de la tarea, 
+3de varios hice más de 1, pero solo marque el primero  -->
+<!-- el uso de boostrap lo utilice en la pagina de contenido   -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<!-- funciones -->
+<script>
+    var nombre = [];
+    
+            function contraseña1(){ 
+            var nombre1= document.getElementById("nom").value;
+            if (nombre1 == ""){
+                alert ("Llena todos los campos")
+            }
+            else{
+                nombre.push(nombre1);
+                alert("Ya hiciste tu registro, yupiii");
+                document.getElementById("nom").value="";
+            }
+            }
+</script>
+
+
+<!-- contenido -->
+
+<body class="body">
+    <link rel="stylesheet" type="text/css" href="act1.css" media="screen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <!-- ul, a, div -->
+   <header id="header">
+        <nav class="menu">
+            <div class="list-container">
+                <ul class="lists">
+                    <li><a href= "act1.html" class="activo">Inicio</a></li>
+                    <li><a href= "act1Cont.html">Contenido</a></li>
+                </ul>
+            </div>
+        </nav>
+   </header>
+
+
+    <!-- h1 -->
+   <div class="img-header">
+        <div class="welcome">
+            <h1>Eventos<hr></h1>
+            <h3 class="header3">ACM</h3>
+        </div>
+    </div>
+
+
+    <!-- form y input -->
+    <div class="imagenes">
+
+        <form  method="post" class="formulario">
+
+            <h1 class="formulario__titulo">Registro</h1><hr><br>
+
+            <label class="formulario__label">Usuario:</label><br>
+            <input class="formulario__input" type="text" id="nom1">
+
+            <label class="formulario__label">Contraseña: </label><br>
+            <input class="formulario__input" type="password" id="nom">
+
+            
+            <div class="formulario__enviar" style="margin-bottom: 2rem;" 
+            onClick= "contraseña1()">Enviar</div>
+            
+          </form>
+      
+          <br>
+          </div>
+          
+    </div>
+
+
+
+</body>
+
+</html>
