@@ -68,6 +68,8 @@
 
  <!--table-->
 <div class="header2">
+      
+
     <br>
     <h2>HACK MTY</h2>
     <h3>¿Que puedo aprender aquí?</h3>
@@ -78,7 +80,8 @@
     </table>
  <!-- ol-->
     <h3>Datos que necesito considerar antes de inscribirme:</h3>
-    <ol>
+
+     <ol>
         <li>Es gratis</li>
         <li>Es en el tec de mty</li>
         <li>son equipos de 4 personas</li>
@@ -86,7 +89,10 @@
     </ol>
 
     <br><br>
+
+ 
 </div>
+
 
 
  <!--button / uso de boostrap-->
@@ -98,8 +104,103 @@
                Inscribete ya!!!   - en hackmty.com  - o comunicate en nuestras redes sociales @hackmty
   </div>
 
+<!--primer parte get element by id -->
+  <p id="element"> esto estoy utilizando para probar get element by id  </p>
+
+<!--primer parte get element by tag name  -->
+<ul>
+    <li>pruebita para </li>
+    <li>tag name </li>
+    <li>wow</li>
+    <li>si</li>
+</ul>
+<!--primer parte node -->
+<div id="probando">
+    <p>con esto estoy probando el node con childNodes</p>
+</div>
+<!--primer parte create element y append child , y el h5 para remove child-->
+<div id="create">
+    <h4>con esto pruebo el create</h4>
+    <h5>este es el prueba para remove</h5>
+</div>
+<button onclick = "borrarChild()">borrarParaRemoveChild</button>
+<!--primer parte get attribute y set atribute  -->
+<img id="pic" src = https://cdn.pixabay.com/photo/2020/10/21/18/07/laptop-5673901__340.jpg alt="img">
+<buttton onclick="cambio()">da click para cambio de img con set attribute</buttton>
+<!--primer parte document.forms  -->
+<form>
+    <label for="parte1"> ingresa dato de prueba para document forms </label>
+    <input type="texto" id="resp" name=" resultado">
+    <button onclick="button()" class="verdato">ver dato</button>
+</form>
+<!--primer parte innerHTML  -->
+<p id="datoss"> parrafo inicial de inner html  </p> 
+<button onclick="cambios()" >cambiar el datito </button>
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384- mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+<!--script de get element by id (1) -->
+<script>
+ var element = document.getElementById("element");
+element.style.color = "red";
+</script>
+<!--script de get element by tag name (2) -->
+<script>
+var lista = document.getElementsByTagName("ul");
+for (var i = 0; i < lista.length; i++) {
+        lista[i].style.color = "pink";
+}
+</script>
+<!--script de node (3) -->
+<script>
+    var probando = document.getElementById("probando");
+    var prueba = probando.childNodes[1];
+    prueba.style.color = "blue";
+    </script>
+<!--script de create element y append child y remove child (4 y 5 y 6)  -->
+<!--script innerHTML (10)  --> 
+<script>
+    var create = document.getElementById("create");
+    var element = document.createElement("h4");
+    var otracreate = document.createTextNode("adicion que se hizo con create y tmb usamos append child");
+    element.appendChild(otracreate);
+    create .appendChild(element);
+    function borrarChild(){
+        var create = document.getElementById("create");
+        var esteBorrar = document.getElementsByTagName("h5")[0];
+        create.removeChild(esteBorrar);
+    }
+    function cambios(){
+        var datoss = document.getElementById("datoss")
+        datoss.innerHTML = "esto es lo que se agrega en inner html"
+    }
+
+</script>
+<!--script get attribute (7) esto hara que traiga el atributo y lo ponga en la consola y set atribute cambiando la img (8)  -->
+<script>
+var pic = document.getElementById("pic");
+var link = pic.getAttribute("src");
+console.log("el link de mi imagen se presenta aqui, ya que consiguio el atributo" + link);
+function cambio(){
+    var pic = document.getElementById("pic");
+    pic.setAttribute("src", "https://thumbs.dreamstime.com/z/pc-computer-8663776.jpg");
+    pic.setAttribute("alt", "cambio pic");
+}
+</script>
+<!--script document.forms (9) se ve en mi consula los datos --> 
+<script>
+    function button(){
+        var pregu = document.forms[0];
+        var nombre = pregu.elements["parte1"].value;
+        console.log("dato: " + nombre);
+    }
+</script>
+<!--sel 10 esta arriba  -->
+
 
 
 </body>
